@@ -4,18 +4,20 @@ var actions = [];
 var question = "What would you like to do?";
 var choice = prompt(question);
 
+function promptUser(){
+	if(input === "list"){
+		list();
+	}
+	else if(input === "new"){
+		newItem();
+	}
+	else if(input === "quit"){
+		//do nothing
+	}
+	else{
 
-if(input === "list"){
-	list();
-}
-else if(input === "new"){
-	newItem();
-}
-else if(input === "quit"){
-	//do nothing
-}
-else{
-
+	}
+	promptUser();
 }
 
 function newItem(){
