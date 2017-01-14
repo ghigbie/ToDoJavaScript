@@ -4,6 +4,7 @@ var actions = [];
 var question = "What would you like to do?";
 var choice = prompt(question);
 
+runApp();
 
 function runApp(){
 	while(choice !== "quit"){
