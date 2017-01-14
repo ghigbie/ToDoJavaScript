@@ -20,10 +20,10 @@ function runApp(){
 		else if(choice === "new"){
 			item = prompt("What should be added to the list?");
 			actions.push(item);
-			console.log(actions);
+			console.log(`${item} added to the list. Thank you!`);
 		}
 		else{
-			alert("Please enter a valid item!");
+			alert("Please enter a valid action!");
 		}
 		choice = prompt(question);
 		runApp();
