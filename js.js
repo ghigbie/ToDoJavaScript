@@ -7,16 +7,22 @@ var choice = prompt(question);
 runApp();
 
 function runApp(){
+	var item;
 	while(choice !== "quit"){
 		if(choice === "list"){
 			console.log(actions);
 		}
-		if(choice === "new"){
-			var item = prompt("What should be added to the list?");
+		else if(choice === "new"){
+			item = prompt("What should be added to the list?");
 			actions.push(item);
 			console.log(actions);
 		}
-		choice;
+		else{
+			alert("Please enter a valid item!");
+		}
+		choice = prompt(question);
+		runApp();
 	}
-	prompt("Ok, its time to go!");
 }
+
+alert("Ok, its time to go!");
