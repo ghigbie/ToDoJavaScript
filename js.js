@@ -11,6 +11,11 @@ function runApp(){
 	while(choice !== "quit"){
 		if(choice === "list"){
 			console.log(actions);
+			forEach(function(item){
+				console.log("**************");
+				console.log(`${actions.indexOf(item)}: ${item}`);
+				console.log("**************");
+			});
 		}
 		else if(choice === "new"){
 			item = prompt("What should be added to the list?");
