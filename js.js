@@ -6,31 +6,44 @@ var input = prompt(question);
 
 while(input !== "quit"){
 	if(input === "list"){
-		console.log("**************");
-		actions.forEach(function(todo, index){
-			console.log(`${index}: ${todo}`);
-		});
-		console.log("**************");
+		listActions();
 	}
 	else if(input === "new"){
-		var newItem = prompt("Enter a new item to add to the list.");
-		newItem = newItem.charAt(0).toUpperCase() + newItem.substr(1);
-		actions.push(newItem);
-		console.log(`${newItem} added to the list.`);
+		addToList();
 	}
 	else if(input === "delete"){
-		var index = prompt("Enter idex of item to delete.")
-		var itemDeleted = actions[index];
-		actions.splice(index, 1); //splice will remove the items from the list following the index
-		console.log(`${itemDeleted} removed from the list.`);
+		deleletItem();
 	}
 	else{
 		alert("Please enter a valid action!")
 	}
-
 	input = prompt(question);
 }
 alert("Ok, its time to go!");
+
+
+
+function listActions(){
+	console.log("**************");
+	actions.forEach(function(todo, index){
+			console.log(`${index}: ${todo}`);
+	});
+	console.log("**************");
+}
+
+function addToList(){
+	var newItem = prompt("Enter a new item to add to the list.");
+	newItem = newItem.charAt(0).toUpperCase() + newItem.substr(1);
+	actions.push(newItem);
+	console.log(`${newItem} added to the list.`);
+}
+
+function deleletItem(){
+	var index = prompt("Enter idex of item to delete.")
+	var itemDeleted = actions[index];
+	actions.splice(index, 1); //splice will remove the items from the list following the index
+	console.log(`${itemDeleted} removed from the list.`);
+}
 
 
 // runApp();
