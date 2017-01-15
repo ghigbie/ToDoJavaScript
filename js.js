@@ -2,7 +2,34 @@
 var actions = [];
 
 var question = "What would you like to do?";
-var choice = prompt(question);
+var input = prompt(question);
+
+while(input !== "quit"){
+	if(input === "list"){
+		console.log("**************");
+		actions.forEach(function(todo, index){
+			console.log(`${idex}: ${todo}`);
+		});
+		console.log("**************");
+	}
+	else if(input === "new"){
+		var newItem = prompt("Enter a new item to add to the list.");
+		newItem = newItem.charAt(0).toUpperCase() + newItem.substr(1);
+		actions.push(newItem);
+		console.log(`${item} added to the list`);
+	}
+	else if(choice === "delete"){
+		var popedItem = actions.pop();
+		console.log(`${popedItem} removed from the list.`)
+	}
+	else{
+		alert("Please enter a valid action!")
+	}
+
+	input = prompt(question);
+}
+alert("Ok, its time to go!");
+
 
 runApp();
 
@@ -15,7 +42,6 @@ function runApp(){
 				console.log(`${index}: ${item}`);
 			});
 			console.log("**************");
-
 		}
 		else if(choice === "new"){
 			item = prompt("What should be added to the list?");
