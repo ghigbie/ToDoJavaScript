@@ -10,17 +10,21 @@ function runApp(){
 	var item;
 	while(choice !== "quit"){
 		if(choice === "list"){
-			console.log(actions);
-			forEach(function(item){
-				console.log("**************");
-				console.log(`${actions.indexOf(item)}: ${item}`);
-				console.log("**************");
+			console.log("**************");
+			actions.forEach(function(item, index){
+				console.log(`${index}: ${item}`);
 			});
+			console.log("**************");
+
 		}
 		else if(choice === "new"){
 			item = prompt("What should be added to the list?");
 			actions.push(item);
 			console.log(`${item} added to the list. Thank you!`);
+		}
+		else if(choice === "delete"){
+			var popedItem = actions.pop();
+			console.log(`${popedItem} removed from the list.`)
 		}
 		else{
 			alert("Please enter a valid action!");
