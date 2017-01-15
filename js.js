@@ -8,7 +8,7 @@ while(input !== "quit"){
 	if(input === "list"){
 		console.log("**************");
 		actions.forEach(function(todo, index){
-			console.log(`${idex}: ${todo}`);
+			console.log(`${index}: ${todo}`);
 		});
 		console.log("**************");
 	}
@@ -20,7 +20,7 @@ while(input !== "quit"){
 	}
 	else if(input === "delete"){
 		var index = prompt("Enter idex of item to delete.")
-		var itemDeleted = actions(index);
+		var itemDeleted = actions[index];
 		actions.splice(index, 1); //splice will remove the items from the list following the index
 		console.log(`${itemDeleted} removed from the list.`);
 	}
